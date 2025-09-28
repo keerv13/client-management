@@ -1,0 +1,12 @@
+### Create new client entity since were sending data need to tell server what to expect
+POST http://localhost:4000/clients
+Content-Type: application/json
+
+{
+"name": "keerv ktst",
+"email": "kafka_test@example.com",
+"password": "testtest",
+"registeredDate": "2025-09-05"
+}
+###
+

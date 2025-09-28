@@ -1,0 +1,36 @@
+server:
+  port: 4004  # Gateway listens on port 4004
+
+spring:
+  cloud:
+    gateway:
+      routes:
+            - id: auth-service-route
+              uri: http://auth-service:4005
+              predicates:
+                - Path=/auth/**
+              filters:
+                - StripPrefix=1
+
+            - id: client-service-route
+              uri: http://client-service:4000
+              predicates:
+                - Path=/api/client/**
+              filters:
+                - StripPrefix=1 # /api/player/** -> /player/**
+                - JwtValidation
+
+
+            - id: api-docs-client-route
+              uri: http://client-service:4000
+              predicates:
+                - Path=/api-docs/clients
+              filters:
+                - RewritePath=/api-docs/clients,/v3/api-docs
+
+            - id: api-docs-auth-route
+              uri: http://auth-service:4005
+              predicates:
+                - Path=/api-docs/auth
+              filters:
+                - RewritePath=/api-docs/auth,/v3/api-docs

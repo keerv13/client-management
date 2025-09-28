@@ -1,0 +1,4 @@
+###GET request to get all players
+GET http://lb-5222540f.elb.localhost.localstack.cloud:4004/api/clients
+Authorization: Bearer {{token}}
+###

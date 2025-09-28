@@ -1,0 +1,12 @@
+GRPC localhost:9001/ScoreService/CreateScoreAccount
+
+{
+  "userId": "user-123",
+  "paperId": "paper-456",
+  "paperToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "answers": [
+    { "questionId": "q1", "chosenOptionId": "o2" },
+    { "questionId": "q2", "chosenOptionId": "o1" },
+    { "questionId": "q3", "chosenOptionId": "o4" }
+  ]
+}
