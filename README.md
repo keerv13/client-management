@@ -8,8 +8,8 @@ A microservices-based system for managing clients, authentication, analytics, an
 | **API Gateway**       | 4004        | Routes and secures requests using JWT validation.              |
 | **Auth Service**      | 4005        | Handles user login, JWT generation, and validation.            |
 | **Client Service**    | 4000        | Manages client entities (CRUD). Sends Kafka events on updates. |
-| **Analytics Service** | 4003        | Consumes Kafka events for player analytics.                    |
-| **Billing Service**   | 4001        | Handles scoring via gRPC (sample science quiz scoring).        |
+| **Analytics Service** | 4003        | Consumes Kafka events for client analytics.                    |
+| **Billing Service**   | 4001        | Handles billing via gRPC.                                      |
 
 
 # Technologies Used
